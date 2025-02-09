@@ -3,7 +3,7 @@ from tkinter.ttk import*
 
 root = Tk()
 root.title("Multiplication table")
-root.geometry("500x500")
+root.geometry("500x800")
 
 title = Label(root,text = "Multiplication table",font = ("Times",18,"bold"))
 title.grid(row = 0,column = 1,pady = 25)
@@ -31,4 +31,10 @@ def multtable():
     for i in range(1,endval.get() + 1):
         multiply = num.get()*i
         tables += str(num.get()) + " X " + str(i) + " = " + str(multiply) + "\n"
+    table.config(text = tables)
+
+table = Label(root,anchor = "center")
+table.grid(row = 5,column = 1,pady = 25)
+generate = Button(root,text = "Generate",command = multtable)
+generate.grid(row = 4,column = 1)
 root.mainloop()
